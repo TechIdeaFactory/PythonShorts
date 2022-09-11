@@ -53,6 +53,8 @@ results = collection.find(
 for r in results:
     print(r["name"])
 
+# using name starting with
+# letters "An" criteria
 results = collection.find(
     {"name": {"$regex": "An.*"}}
 )
