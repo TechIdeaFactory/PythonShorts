@@ -13,7 +13,9 @@ def x_expr_diff(
     )
 
 
-diff, val = x_expr_diff("x**2", 1.00)
+diff, val = x_expr_diff(
+    "x**2+x*4", 1.00
+)
 print("Derivative = " + diff)
 print("Derivative Value = " + str(val))
 
