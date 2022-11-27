@@ -21,7 +21,6 @@ transaction_a_df[
 ).astype(
     int
 )
-# print(transaction_a_df)
 
 transaction_b_df = pd.read_excel(
     "Transactions_B.xlsx",
@@ -38,7 +37,6 @@ transaction_b_df[
 ).astype(
     int
 )
-# print(transaction_b_df.info())
 
 matches_df = pd.merge(
     transaction_a_df,
@@ -64,7 +62,6 @@ matches_df = matches_df[
 matches_df = matches_df.rename(
     columns={"Amount_x": "Amount"}
 )
-# print(matches_df)
 
 diffs_df = pd.merge(
     transaction_a_df,
@@ -115,7 +112,6 @@ diffs_df = diffs_df.rename(
         "Amount_y": "Amount_B",
     }
 )
-# print(diffs_df)
 
 missing_b_df = pd.merge(
     transaction_a_df,
@@ -143,7 +139,6 @@ missing_b_df = missing_b_df.rename(
         "Amount_x": "Amount",
     }
 )
-print(missing_b_df)
 
 missing_a_df = pd.merge(
     transaction_b_df,
@@ -171,7 +166,6 @@ missing_a_df = missing_a_df.rename(
         "Amount_x": "Amount",
     }
 )
-print(missing_a_df)
 
 writer = pd.ExcelWriter(
     "Reconciliation.xlsx",
