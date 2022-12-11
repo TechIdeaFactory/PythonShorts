@@ -18,11 +18,9 @@ def animate(i):
     plt.xlabel(
         "Day from 10/12/21 to 10/12/22"
     )
-    plt.ylabel(
-        "BTC USD Daily Close Price - Yahoo Finance"
-    )
+    plt.ylabel("BTC USD Daily Price")
     plt.title(
-        "BTC USD Daily Close Price - Yahoo Finance - 10/12/21 - 10/12/22"
+        "BTC USD Daily Price 10/12/21 - 10/12/22"
     )
     # plot the line
     ax.plot(xx[:i], yy[:i])
