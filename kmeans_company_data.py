@@ -107,3 +107,35 @@ print(
         "kmeans"
     ].value_counts()
 )
+print(
+    finance_data_df[
+        ["StockID", "kmeans"]
+    ]
+)
+new_data = dict(
+    StockID="TEST",
+    cashRatio=0.6,
+    debtEquityRatio=1.2,
+)
+new_data_df = pd.DataFrame(
+    new_data, index=[0]
+)
+new_data_df[
+    ["cashRatio_S", "debtEquityRatio_S"]
+] = scaler.fit_transform(
+    new_data_df[
+        ["cashRatio", "debtEquityRatio"]
+    ]
+)
+prediction = kmeans.predict(
+    new_data_df[
+        [
+            "cashRatio_S",
+            "debtEquityRatio_S",
+        ]
+    ]
+)
+print(
+    "Prediction cluster "
+    + str(prediction[0])
+)
