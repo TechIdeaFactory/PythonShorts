@@ -2,10 +2,11 @@
 from moviepy.editor import *
 
 
-def video_enhance():
-    clip = VideoFileClip(
-        "skateboard.mp4"
-    )
+def video_enhance(
+    movie_in: str = "movie_in.mp4",
+    movie_out: str = "movie_out.mp4",
+) -> None:
+    clip = VideoFileClip(movie_in)
     # Get 5 seconds clip
     clip1 = clip.subclip(0, 5)
 
@@ -47,7 +48,7 @@ def video_enhance():
     # stack clips
     final = clips_array(clips)
 
-    final.write_videofile("movie.mp4")
+    final.write_videofile(movie_out)
 
 
-video_enhance()
+video_enhance(movie_in="skateboard.mp4")
