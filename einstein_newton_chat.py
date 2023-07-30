@@ -2,7 +2,6 @@
 # pip install --upgrade openai
 
 import openai
-import re
 
 openai.api_key = "your open ai key"
 
