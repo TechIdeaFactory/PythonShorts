@@ -72,7 +72,7 @@ print(
 df1 = df.head(2)
 print(df1)
 
-# Save to Excel all columns
+# Save to csv all columns
 df1.to_csv(
     "netflix_data.csv", index=False
 )
